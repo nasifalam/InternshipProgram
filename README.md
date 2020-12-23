@@ -8,3 +8,7 @@
 
 Introduction to Laravel: https://www.youtube.com/watch?v=ImtZ5yENzgE <br>
 Github:
+
+<br>
+
+Personal Notes
