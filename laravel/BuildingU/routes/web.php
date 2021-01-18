@@ -12,13 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ProgramController;
 
 Route::get('/', function () {
 
   return view('welcome');
+
 });
 
-Route::get('/nasif', function () {
 
-  return view('nasif');
-});
+
+Route::get('/usermanagement', 'App\Http\Controllers\ProgramController@index');
