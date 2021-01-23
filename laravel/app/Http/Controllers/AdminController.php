@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Buildingu;
 use App\Models\User;
 
-class BuildinguController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
         $users = User::all();
 
-        return view('building-u.index', [
-            'admins' => $users
+        return view('building-u.admin', [
+            'users' => $users
         ]);
 
     }

@@ -17,7 +17,6 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
-            <a href="/admin">View all staff members</a>
         </div>
     </div>
 </div>

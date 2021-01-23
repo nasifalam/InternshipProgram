@@ -18,11 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', 'App\Http\Controllers\BuildinguController@index')->middleware('auth');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->middleware('admin');
+Route::get('/teacher', 'App\Http\Controllers\TeacherController@index')->middleware('teacher');
+Route::get('/student', 'App\Http\Controllers\StudentController@index')->middleware('student');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
