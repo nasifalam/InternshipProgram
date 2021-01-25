@@ -22,4 +22,10 @@ Route::get('/', function () {
 
 
 
-Route::get('/usermanagement', 'App\Http\Controllers\ProgramController@index');
+Route::get('/Programs', 'App\Http\Controllers\ProgramController@index');
+Route::get('/Programs/{program_id}', 'App\Http\Controllers\ProgramController@show');
+Route::get('/edit-program/{program_id}/edit', 'App\Http\Controllers\ProgramController@edit');
+Route::get('/delete-program/{program_id}/delete', 'App\Http\Controllers\ProgramController@delete');
+Route::post('/edit', 'App\Http\Controllers\ProgramController@update');
+Route::get('/create', 'App\Http\Controllers\ProgramController@create');
+Route::post('/create', 'App\Http\Controllers\ProgramController@createProgram');
