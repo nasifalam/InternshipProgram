@@ -10,7 +10,7 @@
 @csrf
 <div class="form-group">
   <label for="BuildingU Program Type">Program Type</label>
-  <input type="text" class="form-control" id="BuildingU Program Type" name="BuildingU Program Type" value="23">
+  <input type="text" class="form-control" id="BuildingU Program Type" name="BuildingU Program Type" value="">
 </div>
   <div class="form-group">
     <label for="Program Title">Program Title</label>

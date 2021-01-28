@@ -36,7 +36,7 @@
 
     <tr>
     <td scope="row"> {{$index=$index+1}} </td>
-    <td>{{$program['Program Title']}} </td>
+    <td ><a href="/Programs/{{$program['Program ID']}}" >{{$program['Program Title']}} </td>
     <td>{{$program['Program Area']}} </td>
     <td><a href="/edit-program/{{$program['Program ID']}}/edit" ><button type="button" class="btn btn-primary">Edit</button></td>
     <td><a href="/delete-program/{{$program['Program ID']}}/delete" > <button type="button" class="btn btn-danger">Delete</button>
