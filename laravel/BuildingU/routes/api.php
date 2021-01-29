@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::delete('/user/{id}', [App\Http\Controllers\UserController::class, 'destroy']);
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
