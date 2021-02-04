@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::delete('/user/{id}', [App\Http\Controllers\HomeController::class, 'destroy']);
+Route::patch('/user/{id}', [App\Http\Controllers\HomeController::class, 'update']);
 
 Auth::routes();
 
