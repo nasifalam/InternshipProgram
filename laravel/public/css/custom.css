@@ -34,6 +34,17 @@
 
 .page-title {
     margin-bottom: 1.5rem;
+    justify-self: center;
+}
+
+.page-title h2 {
+    text-align: left;
+}
+
+.create {
+    text-align: right;
+    background-color: rgb(0, 140, 255);
+    color: white;
 }
 
 table {
@@ -67,4 +78,16 @@ th {
 .delete {
     background-color: red;
     color: white;
+}
+
+.update {
+    margin-top: 20px;
+    background-color: rgb(48, 216, 71);
+    color: white;
+}
+
+.info {
+    width: 600px;
+    margin: auto;
+    margin-top: 25px;
 }

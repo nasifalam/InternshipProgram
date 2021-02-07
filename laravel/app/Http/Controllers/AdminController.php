@@ -11,8 +11,18 @@ class AdminController extends Controller
     {
         $users = User::all();
         
-        return view('building-u.management', [
+        return view('admin.management', [
             'users' => $users,
         ]);
+    }
+
+    public function create()
+    {
+        return view('admin.create');
+    }
+
+    public function show()
+    {
+        return view('admin.edit');
     }
 }

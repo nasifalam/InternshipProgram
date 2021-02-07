@@ -21,5 +21,7 @@ Auth::routes(['register' => false]);
 
 // Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']);
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
+Route::get('/edit', [App\Http\Controllers\AdminController::class, 'show'])->middleware('admin');
+Route::get('/create', [App\Http\Controllers\AdminController::class, 'create'])->middleware('admin');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('home')->name('home');
