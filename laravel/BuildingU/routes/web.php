@@ -29,3 +29,4 @@ Route::get('/delete-program/{program_id}/delete', 'App\Http\Controllers\ProgramC
 Route::post('/edit', 'App\Http\Controllers\ProgramController@update');
 Route::get('/create', 'App\Http\Controllers\ProgramController@create');
 Route::post('/create', 'App\Http\Controllers\ProgramController@createProgram');
+Route::post('/create', 'App\Http\Controllers\ProgramController@createProgram');
