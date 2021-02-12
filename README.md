@@ -1,5 +1,5 @@
 #Internship
 
-<h1> Building U Internship Program </h1>
+<h1> BuildingU Program Management Web Application </h1>
 
 
