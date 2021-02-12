@@ -7,7 +7,7 @@
 <ul>
   <li>https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/</li>
   
-</l> 
+</ul> 
 
 
 <h1> Project Description</h1>
