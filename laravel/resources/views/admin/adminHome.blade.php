@@ -16,6 +16,7 @@
 
                     <h5>Admin Privileges:</h5>
                     <li><a href="/admin">Manage users</a></li>
+                    <li><a href="/manage_programs">Manage program</a></li>
                 </div>
             </div>
         </div>
