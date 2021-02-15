@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html>
 
-
-
-
-
-
     @php
     @endphp
 
