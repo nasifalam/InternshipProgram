@@ -1,0 +1,93 @@
+.login-content {
+    /* background-color: red; */
+    margin: auto;
+    width: 400px;
+    box-shadow: 0 2px 5px #b3b3b3;
+    background-color: white;
+}
+
+.card-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 30px 0;
+}
+
+.card-body {
+    padding: 35px;;
+}
+
+.form-group button[type="submit"] {
+    width: 100%;
+    margin: 12px 0;
+    height: 3rem;
+    font-size: 16px;
+}
+
+.admin-content {
+    margin: 25px 60px;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 2px 5px #b3b3b3;
+}
+
+.page-title {
+    margin-bottom: 1.5rem;
+    justify-self: center;
+}
+
+.page-title h2 {
+    text-align: left;
+}
+
+.create {
+    text-align: right;
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    border: 1px solid #c7c7c7;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    border: 1px solid #c7c7c7;
+    background-color: #ececec;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.edit {
+    background-color: rgb(48, 216, 71);
+    color: white;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+}
+
+.update {
+    margin-top: 20px;
+    background-color: rgb(48, 216, 71);
+    color: white;
+}
+
+.info {
+    width: 600px;
+    margin: auto;
+    margin-top: 25px;
+}
