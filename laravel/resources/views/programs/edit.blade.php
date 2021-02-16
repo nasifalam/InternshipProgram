@@ -6,20 +6,20 @@
 <h1>Edit Program</h1>
 
 
-<form action="/edit" method="POST">
+<form action="/programeditted" method="POST">
 @csrf
-<input type="hidden"  id="Program ID" name="Program ID" value="{{$program['Program ID']}}">
+<input type="hidden"  id="id" name="id" value="{{$program['id']}}">
 <div class="form-group">
   <label for="BuildingU Program Type">BuildingU Program Type</label>
-  <input type="text" class="form-control" id="BuildingU Program Type" name="BuildingU Program Type" value="{{$program['BuildingU Program Type']}}">
+  <input type="text" class="form-control" id="BuildingU Program Type" name="BuildingU Program Type" value="{{$program['buildingU_Program_Type']}}">
 </div>
   <div class="form-group">
     <label for="Program Title">Program Title</label>
-    <input type="text" class="form-control" id="Program Title" name="Program Title" value="{{$program['Program Title']}}">
+    <input type="text" class="form-control" id="Program Title" name="Program Title" value="{{$program['program_Title']}}">
   </div>
   <div class="form-group">
     <label for="Program Area">Program Area</label>
-    <input type="text" class="form-control" id="Program Area" name="Program Area" value="{{$program['Program Area']}}">
+    <input type="text" class="form-control" id="Program Area" name="Program Area" value="{{$program['program_Area']}}">
   </div>
 
   <button type="submit" class="btn btn-primary">Update</button>

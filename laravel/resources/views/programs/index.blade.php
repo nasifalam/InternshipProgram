@@ -6,7 +6,7 @@
     @endphp
 
 <h1>Program Management Poral</h1>
-<button onclick="window.location.href='/create'" type="button" class="btn btn-primary">Create a Program</button>
+<button onclick="window.location.href='create_program'" type="button" class="btn btn-primary">Create a Program</button>
 
 <table class="table">
   <thead class="thead-dark">
@@ -14,6 +14,7 @@
       <th scope="col">#</th>
       <th scope="col">Program Name</th>
       <th scope="col">Program Area</th>
+      <th scope="col">BuildingU Program Type</th>
       <th scope="col"></th>
       <th scope="col"></th>
 
@@ -26,10 +27,11 @@
 
     <tr>
     <td scope="row"> {{$index=$index+1}} </td>
-    <td ><a href="/Programs/{{$program['Program ID']}}" >{{$program['program_Title']}} </td>
+    <td ><a href="/Programs/{{$program['id']}}" >{{$program['program_Title']}} </td>
+    <td>{{$program['buildingU_Program_Type']}} </td>
     <td>{{$program['program_Area']}} </td>
-    <td><a href="/edit-program/{{$program['Program ID']}}/edit" ><button type="button" class="btn btn-primary">Edit</button></td>
-    <td><a href="/delete-program/{{$program['Program ID']}}/delete" > <button type="button" class="btn btn-danger">Delete</button>
+    <td><a href="/edit-program/{{$program['id']}}/edit" ><button type="button" class="btn btn-primary">Edit</button></td>
+    <td><a href="/delete-program/{{$program['id']}}/delete" > <button type="button" class="btn btn-danger">Delete</button>
 </td>
 
   </tr>

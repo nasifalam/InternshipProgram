@@ -6,7 +6,7 @@
 <h1>Create Program</h1>
 
 
-<form action="/create" method="POST">
+<form action="/create_program" method="POST">
 @csrf
 <div class="form-group">
   <label for="BuildingU Program Type">Program Type</label>
@@ -21,8 +21,8 @@
     <input type="text" class="form-control" id="Program Area" name="Program Area" value="">
   </div>
   <div class="form-group">
-    <label for="Program Skillset">Program Skillset</label>
-    <input type="text" class="form-control" id="Program Skillset" name="Program Skillset" value="">
+    <label for="Program Skills">Program Skills</label>
+    <input type="text" class="form-control" id="Program Skills" name="Program Skills" value="">
   </div>
 
   <div class="form-group">

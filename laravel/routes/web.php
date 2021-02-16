@@ -53,9 +53,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 //Routes for Programs
 
 Route::get('/manage_programs', 'App\Http\Controllers\ProgramController@index')->middleware('admin');
-Route::get('/Programs/{program_id}', 'App\Http\Controllers\ProgramController@show');
-Route::get('/edit-program/{program_id}/edit', 'App\Http\Controllers\ProgramController@edit');
-Route::get('/delete-program/{program_id}/delete', 'App\Http\Controllers\ProgramController@delete');
-Route::post('/edit_programs', 'App\Http\Controllers\ProgramController@update');
+Route::get('/Programs/{id}', 'App\Http\Controllers\ProgramController@show')->middleware('admin');
+Route::get('/edit-program/{id}/edit', 'App\Http\Controllers\ProgramController@edit')->middleware('admin');
+Route::get('/delete-program/{id}/delete', 'App\Http\Controllers\ProgramController@delete');
+Route::post('/programeditted', 'App\Http\Controllers\ProgramController@update')->middleware('admin');
 Route::get('/create_program', 'App\Http\Controllers\ProgramController@create');
 Route::post('/create_program', 'App\Http\Controllers\ProgramController@createProgram');
