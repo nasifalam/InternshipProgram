@@ -44,7 +44,7 @@ Route::post('/create/user', 'App\Http\Controllers\AdminController@createUser')->
 //Route::get('/create/user', 'App\Http\Controllers\AdminController@create')->middleware('admin');
 Route::get('/edit-user/{id}/edit', 'App\Http\Controllers\AdminController@edit')->middleware('admin');
 Route::post('/edit', 'App\Http\Controllers\AdminController@update')->middleware('admin');
-
+Route::get("/search", 'App\Http\Controllers\AdminController@search')->middleware("admin");
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('home')->name('home');
@@ -59,3 +59,4 @@ Route::get('/delete-program/{id}/delete', 'App\Http\Controllers\ProgramControlle
 Route::post('/programeditted', 'App\Http\Controllers\ProgramController@update')->middleware('admin');
 Route::get('/create_program', 'App\Http\Controllers\ProgramController@create');
 Route::post('/create_program', 'App\Http\Controllers\ProgramController@createProgram');
+
