@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Symfony\Component\Console\Helper\Table;
+use DB;
 
 class AdminController extends Controller
 {
@@ -68,5 +70,11 @@ public function update(Request $request) {
   $user->save();
   return redirect('/admin');
 
+}
+
+public function search(Request $request){
+    $search = $request->get('search');
+    $users = DB::table('users')->where("name", "like", '%'.$search.'%')->paginate(5);
+    return view("admin.management", ['users'=>$users]);
 }
 }
