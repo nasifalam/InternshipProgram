@@ -9,7 +9,7 @@
                 <h2>Manage Users</h2>
             </div>
             <form class="col-md-2" method="get" action="/create/user">
-                <button class="create btn" type="submit">New User</button>
+                <button class="btn btn-primary" type="submit">New User</button>
             </form>
         </div>
     </div>

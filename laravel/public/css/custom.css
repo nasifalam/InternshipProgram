@@ -70,22 +70,6 @@ th {
     border-radius: 5px;
 }
 
-.edit {
-    background-color: rgb(48, 216, 71);
-    color: white;
-}
-
-.delete {
-    background-color: red;
-    color: white;
-}
-
-.update {
-    margin-top: 20px;
-    background-color: rgb(48, 216, 71);
-    color: white;
-}
-
 .info {
     width: 600px;
     margin: auto;

@@ -1,29 +1,73 @@
+@extends('layouts.app')
 
+@section('content')
 
+<div class="admin-content info">
+    <form action="/create/user" method="POST">
+        @csrf
+        <div class="page-title">
+            <div class="col-md-10">
+                <h2>New User</h2>
+            </div> 
+        </div>
 
+        <!-- Modified register form -->
+        <div class="form-group row">
+            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
+            <div class="col-md-6">
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-<h1>Create Program</h1>
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
 
+        <div class="form-group row">
+            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-<form action="/create/user" method="POST">
-@csrf
-<div class="form-group">
-  <label for="BuildingU Program Type">name</label>
-  <input type="text" class="form-control" id="name" name="name" value="">
+            <div class="col-md-6">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+            <div class="col-md-6">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+            <div class="col-md-2 mt-1">
+                <select name="role" id="role">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="school">School</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="btn-primary btn col-md-4" type="submit">Register New User</button>
+    </form>
 </div>
-  <div class="form-group">
-    <label for="Program Title">email</label>
-    <input type="email" class="form-control" id="email" name="email" value="">
-  </div>
-  <div class="form-group">
-    <label for="Program Area">pass</label>
-    <input type="password" class="form-control" id="password" name="password" value="">
-  </div>
-  <div class="form-group">
-    <label for="Program Skillset">role</label>
-    <input type="text" class="form-control" id="role" name="role" value="">
-  </div>
 
-  <button type="submit" name="submit" class="btn btn-primary">Save</button>
-</form>
+@endsection
