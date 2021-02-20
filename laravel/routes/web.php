@@ -59,4 +59,5 @@ Route::get('/delete-program/{id}/delete', 'App\Http\Controllers\ProgramControlle
 Route::post('/programeditted', 'App\Http\Controllers\ProgramController@update')->middleware('admin');
 Route::get('/create_program', 'App\Http\Controllers\ProgramController@create');
 Route::post('/create_program', 'App\Http\Controllers\ProgramController@createProgram');
+Route::get('/search_programs', 'App\Http\Controllers\ProgramController@searchPrograms');
 

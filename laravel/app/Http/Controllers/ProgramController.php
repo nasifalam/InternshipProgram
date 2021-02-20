@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Program;
+use Illuminate\Support\Facades\DB; //Imported this to use DB
 
 class ProgramController extends Controller
 {
@@ -58,7 +59,8 @@ public function create(Request $request) {
 
 public function createProgram(Request $request) {
 
-
+/*   DB::table('programs') //The DB finds in your database the programs table
+  ->insert($request->all()); */
 
 $program = new Program;
 
@@ -80,8 +82,10 @@ return redirect('/manage_programs');
 
 }
 
-
-
-
+public function searchPrograms(Request $request){
+  $search = $request->get('search');
+  $programs = DB::table('programs')->where("program_Title", "like", '%'.$search.'%')->paginate(5);
+  return view("programs.index", ['programs'=>$programs]);
+}
 
     }
