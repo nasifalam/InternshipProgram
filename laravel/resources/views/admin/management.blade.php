@@ -8,12 +8,12 @@
             <div class="col-md-10">
                 <h2>Manage Users</h2>
             </div>
-            <form class="col-md-2" method="get" action="/create/user">
+            <form class="col-md-2 text-md-right pt-1" method="get" action="/create/user">
                 <button class="btn btn-primary" type="submit">New User</button>
             </form>
         </div>
     </div>
-    <div class="col-2 pb-3">
+    <div class="col-3 pb-3 pl-0">
         <form action="/search" method="get">
             <div class="input-group">
                 <input type="search" placeholder="Search Name" name = "search" class="form-control">
@@ -47,11 +47,10 @@
 
 
                      <td><a href="/delete-user/{{$user->id}}/delete" > <button type="button" class="btn btn-danger">Delete</button>
-
-</tr>
-@endforeach
-</tbody>
-</table>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 
 @endsection

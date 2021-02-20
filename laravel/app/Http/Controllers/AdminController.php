@@ -60,8 +60,6 @@ public function edit($id) {
 
 public function update(Request $request) {
 
-
-
   $user = User::find($request->{'id'});
   $user['name']=$request->input('name');
   $user['email']=$request->input('email');
