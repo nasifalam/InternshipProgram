@@ -21,6 +21,15 @@ class ProgramController extends Controller
     ]);
   }
 
+  public function programs_homepage() {
+
+  $programs = Program::orderBy('program_Area', 'desc')->get();
+
+  return view('programs.program_homepage', [
+    'programs' => $programs,
+  ]);
+}
+
   public function show($id) {
     $program = Program::findOrFail($id); // use the $id variable to query the db for a record
    return view('Programs.show', ['program' => $program]);

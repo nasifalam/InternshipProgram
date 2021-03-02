@@ -75,3 +75,22 @@ th {
     margin: auto;
     margin-top: 25px;
 }
+
+/* Programs */
+.program_homepage_item{
+    display:flex; justify-content: center; margin-bottom:50px;
+    border: 1px solid grey; border-radius: 3px;
+    height: 500px; width:60%;
+}
+.program_homepage_title{
+    margin: 25px 35px 0px 35px; font-size:35px; 
+}
+.program_homepage_where{
+    margin: 0px 35px 0px 35px;
+}
+.program_homepage_date{
+    margin: 0px 35px 0px 35px; text-align: justify; color:#3390ff;
+}
+.program_homepage_desc{
+    margin: 15px 35px 0px 35px; text-align: justify;
+}
