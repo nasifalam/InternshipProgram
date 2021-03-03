@@ -23,10 +23,8 @@ class ProgramController extends Controller
 
   public function programs_homepage() {
 
-  $programs = Program::orderBy('program_Area', 'desc')->get();
-
   return view('programs.program_homepage', [
-    'programs' => $programs,
+    'programs' => Program::paginate(2),
   ]);
 }
 

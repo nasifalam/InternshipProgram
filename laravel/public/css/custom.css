@@ -77,6 +77,9 @@ th {
 }
 
 /* Programs */
+.program_homepage_h1{
+    margin: 50px 35px 50px 35px;
+}
 .program_homepage_item{
     display:flex; justify-content: center; margin-bottom:50px;
     border: 1px solid grey; border-radius: 3px;
@@ -93,4 +96,7 @@ th {
 }
 .program_homepage_desc{
     margin: 15px 35px 0px 35px; text-align: justify;
+}
+.program_pagination_links{
+    margin-left: 50px;
 }
