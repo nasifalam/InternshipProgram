@@ -52,4 +52,5 @@ Route::post('/programeditted', 'App\Http\Controllers\ProgramController@update')-
 Route::get('/create_program', 'App\Http\Controllers\ProgramController@create');
 Route::post('/create_program', 'App\Http\Controllers\ProgramController@createProgram');
 Route::get('/search_programs', 'App\Http\Controllers\ProgramController@searchPrograms');
+Route::get('/search_programs_v1', 'App\Http\Controllers\ProgramController@searchPrograms_v1');
 

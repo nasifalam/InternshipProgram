@@ -95,4 +95,11 @@ public function searchPrograms(Request $request){
   return view("programs.index", ['programs'=>$programs]);
 }
 
+public function searchPrograms_v1(Request $request){
+        $type = $request->get('searchType');
+        $search = $request->get('search');
+        $programs = DB::table('programs')->where("$type", "like", '%'.$search.'%')->paginate(1);
+        return view("programs.program_homepage", ['programs'=>$programs]);
+    }
+
     }

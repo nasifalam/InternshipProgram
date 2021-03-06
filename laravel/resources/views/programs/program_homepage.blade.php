@@ -9,9 +9,22 @@
     @endphp
 
 <div>
+    <a href="/programs_homepage"><h1 class="program_homepage_h1">Programs Available</h1></a>
+    <div class="col-2 p-3">
+        <form action="/search_programs_v1" method="get">
+            <div class="input-group">
+                <select name="searchType" id="searchType">
+                    <option value="program_Title">Name</option>
+                    <option value="program_City">City</option>
+                </select>
+                <input type="search" placeholder="Search " name = "search" class="form-control">
+                <span class="input-group-prepend">
+                  <button type="submit" class="btn btn-primary">Search</button>
+              </span>
+            </div>
 
-<h1 class="program_homepage_h1">Programs Available</h1>
-
+        </form>
+    </div>
 @foreach($programs as $program)
     <div class="container">
         <div class="row program_homepage_item">
@@ -29,10 +42,10 @@
                     Lorem Ipsum is sim
                     ply dummy text of the print
                     ing and typesetting industry. Lorem Ips
-                    um has been the industry's standard dummy text 
+                    um has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a ga
                     lley of type and scrambled it to make a type specimen book. ... It has roo
-                    ts in a piece of classical Latin literature 
+                    ts in a piece of classical Latin literature
                     from 45 BC, making it over 2000 years ol
                 </div>
             </div>
