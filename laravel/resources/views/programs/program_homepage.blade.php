@@ -12,12 +12,12 @@
     <a href="/programs_homepage"><h1 class="program_homepage_h1">Programs Available</h1></a>
     <div class="col-2 p-3">
         <form action="/search_programs_v1" method="get">
-            <div class="input-group">
+            <div class="program_input-group">
                 <select name="searchType" id="searchType">
                     <option value="program_Title">Name</option>
                     <option value="program_City">City</option>
                 </select>
-                <input type="search" placeholder="Search " name = "search" class="form-control">
+                <input type="search" placeholder="Search " name = "search" class="form-control" id="program_serach_bar">
                 <span class="input-group-prepend">
                   <button type="submit" class="btn btn-primary">Search</button>
               </span>

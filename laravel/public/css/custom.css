@@ -100,3 +100,12 @@ th {
 .program_pagination_links{
     margin-left: 50px;
 }
+#searchType{
+    margin-right: 10px; height:45px;
+}
+#program_serach_bar{
+    width: 300px; margin-right: 10px; height:45px;
+}
+.program_input-group{
+    display: flex; margin-bottom: 10px;
+}
