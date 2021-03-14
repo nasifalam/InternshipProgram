@@ -9,22 +9,41 @@
     @endphp
 
 <div>
-    <a href="/programs_homepage"><h1 class="program_homepage_h1">Programs Available</h1></a>
-    <div class="col-2 p-3">
-        <form action="/search_programs_v1" method="get">
-            <div class="program_input-group">
-                <select name="searchType" id="searchType">
-                    <option value="program_Title">Name</option>
-                    <option value="program_City">City</option>
-                </select>
-                <input type="search" placeholder="Search " name = "search" class="form-control" id="program_serach_bar">
-                <span class="input-group-prepend">
-                  <button type="submit" class="btn btn-primary">Search</button>
-              </span>
-            </div>
+    <a href="/search_programs_v2"><h1 class="program_homepage_h1">Programs Available</h1></a>
+    <div class="container">
+        <div class="row col-2 p-3">
+            <form action="/search_programs_v2" method="get" id="filter-form">
+                <div class="program_input-group">
+                    <select name="searchType" id="searchType">
+                        <option value="program_Title">Name</option>
+                        <option value="program_City">City</option>
+                    </select>
+                    <input type="search" placeholder="Search " name = "search" class="form-control" id="program_serach_bar">
+                    <span class="input-group-prepend">
+                    <button type="submit" form="filter-form" class="btn btn-primary">Search</button>
+                </span>
+                </div>
+                <!-- drop down filters -->
+                <div class="row">
+                    <select name="program_Type" class="col form-control">
+                        <option value="" disabled selected>Program Type</option>
+                        @foreach($types as $type)
+                            <option value="{{$type-> buildingU_Program_Type}}">{{$type-> buildingU_Program_Type}}</option>
+                        @endforeach
+                    </select>
 
-        </form>
+                    <select name="program_Area" class="col form-control">
+                        <option value="" disabled selected>Program Area</option>
+                        @foreach($areas as $area)
+                            <option value="{{$area-> program_Area}}">{{$area-> program_Area}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </form>
+        </div>
     </div>
+
+
 @foreach($programs as $program)
     <div class="container">
         <div class="row program_homepage_item">
