@@ -43,7 +43,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 
 
 //Routes for Programs
-
+Route::get('/programs_homepage', 'App\Http\Controllers\ProgramController@programs_homepage');
 Route::get('/manage_programs', 'App\Http\Controllers\ProgramController@index')->middleware('admin');
 Route::get('/Programs/{id}', 'App\Http\Controllers\ProgramController@show')->middleware('admin');
 Route::get('/edit-program/{id}/edit', 'App\Http\Controllers\ProgramController@edit')->middleware('admin');
@@ -52,4 +52,6 @@ Route::post('/programeditted', 'App\Http\Controllers\ProgramController@update')-
 Route::get('/create_program', 'App\Http\Controllers\ProgramController@create');
 Route::post('/create_program', 'App\Http\Controllers\ProgramController@createProgram');
 Route::get('/search_programs', 'App\Http\Controllers\ProgramController@searchPrograms');
+Route::get('/search_programs_v1', 'App\Http\Controllers\ProgramController@searchPrograms_v1');
+Route::get('/search_programs_v2', 'App\Http\Controllers\ProgramController@searchPrograms_v2');
 

@@ -21,6 +21,13 @@ class ProgramController extends Controller
     ]);
   }
 
+  public function programs_homepage() {
+
+    return view('programs.program_homepage', [
+      'programs' => Program::paginate(2),
+    ]);
+  }
+
   public function show($id) {
     $program = Program::findOrFail($id); // use the $id variable to query the db for a record
    return view('Programs.show', ['program' => $program]);
@@ -87,5 +94,59 @@ public function searchPrograms(Request $request){
   $programs = DB::table('programs')->where("program_Title", "like", '%'.$search.'%')->paginate(5);
   return view("programs.index", ['programs'=>$programs]);
 }
+
+public function searchPrograms_v1(Request $request){
+        $type = $request->get('searchType');
+        $search = $request->get('search');
+        $programs = DB::table('programs')->where("$type", "like", '%'.$search.'%')->paginate(1);
+        return view("programs.program_homepage", ['programs'=>$programs]);
+    }
+
+public function searchPrograms_v2(Request $request) {
+
+  // user search request
+  $type = $request->get('searchType');
+  if (!$request->filled("searchType")) $type = "program_Title";
+  $search = $request->get('search');
+  $program_Type = $request->get('program_Type');
+  $program_Area = $request->get('program_Area');
+
+  
+  if ($request->filled("program_Type"))
+  {
+    $programs = DB::table('programs')
+    ->where($type, "like", '%'.$search.'%')
+    ->where('buildingU_Program_Type', $program_Type)->paginate(2);
+  }
+  elseif ($request->filled("program_Area"))
+  {
+    $programs = DB::table('programs')
+    ->where($type, "like", '%'.$search.'%')
+    ->where('program_Area', $program_Area)->paginate(2);
+  }
+  elseif ($request->filled("program_Type") and $request->filled("program_Area"))
+  {
+    $programs = DB::table('programs')
+    ->where($type, "like", '%'.$search.'%')
+    ->where('buildingU_Program_Type', $program_Type)
+    ->where('program_Area', $program_Area)->paginate(2);
+  }
+  else
+  {
+    $programs = DB::table('programs')
+    ->where($type, "like", '%'.$search.'%')->paginate(2);
+  }
+
+  // filter options
+  $filter_options = Program::orderBy('program_Area', 'asc')->get();
+  $present_types = $filter_options->unique('buildingU_Program_Type');
+  $present_areas = $filter_options->unique('program_Area');
+
+  return view("programs.program_homepage", [
+      'programs'=>$programs,
+      'types'=>$present_types,
+      'areas'=>$present_areas,
+  ]);
+} 
 
     }
