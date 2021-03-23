@@ -109,3 +109,17 @@ th {
 .program_input-group{
     display: flex; margin-bottom: 10px;
 }
+
+/* Programs/{id} */
+.main{margin:45px 75px 75px 75px}
+.show_title{
+    font-size:50px; border-radius: 5px;
+    border-bottom: 5px solid #c5c6c7;
+    height:80px; margin-bottom: 20px; width:70vw;
+}
+.show_topInfo{
+    color:grey; font-size:18px; display:flex;
+}
+.show_des{
+    width:50vw; margin-top:15px;
+}
