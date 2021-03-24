@@ -49,10 +49,10 @@
                     </div>
                 </div>
 
-                <!-- search bar -->
-                <!-- <div class="row">
+                <!-- search bar to programs page-->
+                <div class="row">
                     <div class="col-4 p-1 mx-auto">
-                        <form action="/search" method="get">
+                        <form action="/search_programs_v2" method="get">
                             <div class="input-group">
                                 <input type="search" placeholder="Program Title" name = "search" class="form-control">
                                 <span class="input-group-prepend">
@@ -61,7 +61,7 @@
                             </div>
                         </form>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </body>
