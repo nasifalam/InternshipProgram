@@ -1,4 +1,6 @@
 @extends('layouts.layout')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 
@@ -49,10 +51,6 @@
     @endforeach
     </tbody>
 </table>
-
-
-
-@section('content')
 
 
 <br>

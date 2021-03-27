@@ -1,4 +1,6 @@
 @extends('layouts.layout')
+
+@section('content')
 <!DOCTYPE html>
 <html>
     <head>
@@ -94,3 +96,5 @@
 
 
 </html>
+
+@endsection
