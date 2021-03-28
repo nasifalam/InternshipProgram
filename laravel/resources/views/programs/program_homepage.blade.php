@@ -26,7 +26,7 @@
                 </span>
                 </div>
                 <!-- drop down filters -->
-                <div class="row">
+               <div class="row">
                     <select name="program_Type" class="col form-control">
                         <option value="" disabled selected>Program Type</option>
                         @foreach($types as $type)
@@ -41,6 +41,7 @@
                         @endforeach
                     </select>
                 </div>
+
             </form>
         </div>
     </div>
@@ -51,7 +52,7 @@
         <div class="row program_homepage_item">
             <div class="col">
                 <div class="program_homepage_title">
-                    {{$program-> program_Title}}
+                   <a href="/Programs/{{$program->id}} ">{{$program-> program_Title}}</a>
                 </div>
                 <div class="program_homepage_where">
                     {{$program-> program_City}}, {{$program-> program_Address}}

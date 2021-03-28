@@ -48,7 +48,7 @@
                 <!-- welcome page title -->
                 <div class="row">
                     <div class="col-auto mb-4 mx-auto">
-                        <h1>Building-U</h2> 
+                        <h1>Building-U</h2>
                     </div>
                 </div>
 

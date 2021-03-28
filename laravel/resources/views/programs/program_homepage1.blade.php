@@ -21,7 +21,7 @@
             <div class="col-6 p-1 mt-3 mb-2">
                 <div class="input-group">
                     <input type="search" placeholder="Program Title" name = "search" class="form-control">
-                    
+
                     <!-- submit button -->
                     <span class="input-group-prepend">
                         <button type="submit" form="filter-form" class="btn btn-primary">Find Programs</button>
@@ -35,14 +35,14 @@
 
             <select name="program_Type" class="col form-control">
                 <option value="" disabled selected>Program Type</option>
-                @foreach($types as $type)
+                @foreach($type as $type)
                     <option value="{{$type-> buildingU_Program_Type}}">{{$type-> buildingU_Program_Type}}</option>
                 @endforeach
             </select>
-            
+
             <select name="program_Area" class="col form-control">
                 <option value="" disabled selected>Program Area</option>
-                @foreach($areas as $area)
+                @foreach($area as $area)
                     <option value="{{$area-> program_Area}}">{{$area-> program_Area}}</option>
                 @endforeach
             </select>
@@ -67,10 +67,10 @@
                     Lorem Ipsum is sim
                     ply dummy text of the print
                     ing and typesetting industry. Lorem Ips
-                    um has been the industry's standard dummy text 
+                    um has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a ga
                     lley of type and scrambled it to make a type specimen book. ... It has roo
-                    ts in a piece of classical Latin literature 
+                    ts in a piece of classical Latin literature
                     from 45 BC, making it over 2000 years ol
                 </div>
             </div>
