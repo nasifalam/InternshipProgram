@@ -71,8 +71,7 @@
                     from 45 BC, making it over 2000 years ol
                 </div>
                 <div class="form-inline">
-                    <form action="/apply" method="POST" id="apply">
-                        <input type="hidden"  id="id" name="id" value="{{$program -> id}}">
+                    <form action="/Programs/{{$program->id}}" method="GET" id="apply">
                         <button type="submit" class="m-5 px-4 btn btn-primary">Apply</button>
                     </form>
                     <form action="/save" method="POST">
