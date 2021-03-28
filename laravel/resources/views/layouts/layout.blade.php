@@ -32,9 +32,15 @@
       <div class="nav">
         <div class="navLayout">Building-U</div>
         <div class="sidebar">
-            <a class="sidbarItems" href="/manage_programs">Manage</a>
+            @if (Auth::user()->role == 'admin')
+              <a class="sidbarItems" href="/manage_programs">Manage</a>
+            @endif
             <a class="sidbarItems" href="/search_programs_v2">Programs</a>
             <a href="/">Home</a>
+
+
+
+
         </div>
       </div>
     
