@@ -31,17 +31,27 @@
     <body class="antialiased">
       <div class="nav">
         <div class="navLayout">Building-U</div>
-        <div class="sidebar">
-            @if (Auth::user()->role == 'admin')
-              <a class="sidbarItems" href="/manage_programs">Manage</a>
-            @endif
+
+        {{-- Logged In --}}
+        @if (Auth::user() != null)
+          <div class="sidebar">
+              @if (Auth::user()->role == 'admin')
+                <a class="sidbarItems" href="/manage_programs">Manage</a>
+              @endif
+
+              <a class="sidbarItems" href="/search_programs_v2">Programs</a>
+              <a href="/">Home</a>
+          </div>
+        @endif
+
+        {{-- Logged Out --}}
+        @if (Auth::user() == null)
+          <div class="sidebar">
             <a class="sidbarItems" href="/search_programs_v2">Programs</a>
             <a href="/">Home</a>
+          </div>
+        @endif
 
-
-
-
-        </div>
       </div>
     
       <div>
