@@ -17,11 +17,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['register' => false]);
+//Auth::routes(); --Benson and Vijay's Code- What does this code do?
+Auth::routes(['/register' => true]);
 
-// Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']);
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
-Route::get('/edit', [App\Http\Controllers\AdminController::class, 'show'])->middleware('admin');
-Route::get('/create', [App\Http\Controllers\AdminController::class, 'create'])->middleware('admin');
+// Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']); --> Andrw's commented code
+
+// The route handles the call to fetch the users from the db. NA placed the following code.
+Route::get('/admin', 'App\Http\Controllers\AdminController@index')->middleware('admin');
+
+//Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');==>And's code. NA used this. We can remove it.
+
+// The route handles the deletion of the user
+Route::get('/delete-user/{id}/delete', 'App\Http\Controllers\AdminController@delete')->middleware('admin');
+
+
+//Route::get('/edit', [App\Http\Controllers\AdminController::class, 'show'])->middleware('admin');
+
+
+
+//Route::get('/create', [App\Http\Controllers\AdminController::class, 'create'])->middleware('admin'); --> Andrew code
+
+//The route gets the form to create a new user--> NA
+Route::get('/create/user', 'App\Http\Controllers\AdminController@create')->middleware('admin');
+
+Route::post('/create/user', 'App\Http\Controllers\AdminController@createUser')->middleware('admin');
+//Route::get('/create/user', 'App\Http\Controllers\AdminController@create')->middleware('admin');
+Route::get('/edit-user/{id}/edit', 'App\Http\Controllers\AdminController@edit')->middleware('admin');
+Route::post('/edit', 'App\Http\Controllers\AdminController@update')->middleware('admin');
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('home')->name('home');

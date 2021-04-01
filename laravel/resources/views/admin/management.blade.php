@@ -4,14 +4,14 @@
 
 <div class="admin-content">
     <div class="page-title">
-        <div class="row"> 
+        <div class="row">
             <div class="col-md-10">
                 <h2>Manage Users</h2>
-            </div> 
-            <form class="col-md-2" method="get" action="/create">
+            </div>
+            <form class="col-md-2" method="get" action="/create/user">
                 <button class="create btn" type="submit">New User</button>
             </form>
-        </div> 
+        </div>
     </div>
 
     <table>
@@ -29,12 +29,12 @@
                     <td>{{ $user-> email }}</td>
                     <td>{{ $user-> password }}</td>
                     <td>{{ $user-> role }}</td>
-                    <td>
-                        <form method="get" action="/edit">
-                            <button class="btn edit" type="submit">Edit</button>
-                        </form>
-                    </td>
-                    <td><button class="btn delete">Delete</button></td>
+                    
+                      <td><a href="/edit-user/{{$user['id']}}/edit" ><button type="button" class="btn btn-primary">Edit</button></td>
+
+
+                    <td><a href="/delete-user/{{$user['id']}}/delete" > <button type="button" class="btn btn-danger">Delete</button>
+                  </td>
                 </tr>
             @endforeach
         </tbody>
