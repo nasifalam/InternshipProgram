@@ -71,13 +71,14 @@
                     from 45 BC, making it over 2000 years ol
                 </div>
                 <div class="form-inline">
-                    <form action="/Programs/{{$program->id}}" method="GET" id="apply">
-                        <button type="submit" class="m-5 px-4 btn btn-primary">Apply</button>
-                    </form>
-                    <form action="/save" method="POST">
-                        <input type="hidden"  id="id" name="id" value="{{$program -> id}}">
-                        <button type="submit" class="m-5 px-4 btn btn-secondary">Save</button>
-                    </form>
+                        <form action="/Programs/{{$program->id}}" method="GET">
+                            <button type="submit" class="m-5 px-4 btn btn-primary">Apply</button>
+                        </form>
+                        <form action="/save_program" method="POST">
+                            @csrf
+                            <input type="hidden" name="program_id" value="{{$program -> id}}">
+                            <button type="submit" class="m-5 px-4 btn btn-secondary">Save</button>
+                        </form>
                 </div>
             </div>
 {{--             <div class="col program_homepage_item">
