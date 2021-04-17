@@ -20,4 +20,13 @@ class ApplicationController extends Controller
 
     return redirect('/search_programs_v2');
   }
+
+  public function showPrograms(){
+      $userid = Auth::user()->id;
+      $user = Auth::user();
+      $myapplications = DB::table('applications')->where("student_id", 'like',"$userid")
+          ->join('programs','programs.id',"=","applications.program_id")
+          ->get();
+      return view("applications.my_programs", ['myapplications'=>$myapplications],['user'=> $user]);
+  }
 }

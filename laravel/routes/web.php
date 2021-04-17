@@ -58,3 +58,4 @@ Route::get('/search_programs_v2', 'App\Http\Controllers\ProgramController@search
 
 //Routes for program applications
 Route::post('/save_program', 'App\Http\Controllers\ApplicationController@newSave')->middleware('auth');
+Route::get('/my_programs','App\Http\Controllers\ApplicationController@showPrograms')->middleware('auth');
