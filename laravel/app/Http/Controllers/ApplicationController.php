@@ -16,8 +16,13 @@ class ApplicationController extends Controller
 
     $save['student_id']=Auth::user() -> id;
     $save['program_id']=$request->input('program_id');
-    $save->save();
-
+    if (!(DB::table('applications')
+    ->where('student_id', $save['student_id'])
+    ->where('program_id', $save['program_id'])
+    ->exists()))
+    {
+      $save->save();
+    }
     return redirect('/search_programs_v2');
   }
 

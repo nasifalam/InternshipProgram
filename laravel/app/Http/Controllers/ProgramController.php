@@ -59,7 +59,7 @@ public function update(Request $request) {
 
 public function create(Request $request) {
 
-  return view('Programs.create');
+  return view('programs.create');
 
 
 }
@@ -112,7 +112,14 @@ public function searchPrograms_v2(Request $request) {
   $program_Area = $request->get('program_Area');
 
   
-  if ($request->filled("program_Type"))
+  if ($request->filled("program_Type") and $request->filled("program_Area"))
+  {
+    $programs = DB::table('programs')
+    ->where($type, "like", '%'.$search.'%')
+    ->where('buildingU_Program_Type', $program_Type)
+    ->where('program_Area', $program_Area)->paginate(2);
+  }
+  elseif ($request->filled("program_Type"))
   {
     $programs = DB::table('programs')
     ->where($type, "like", '%'.$search.'%')
@@ -122,13 +129,6 @@ public function searchPrograms_v2(Request $request) {
   {
     $programs = DB::table('programs')
     ->where($type, "like", '%'.$search.'%')
-    ->where('program_Area', $program_Area)->paginate(2);
-  }
-  elseif ($request->filled("program_Type") and $request->filled("program_Area"))
-  {
-    $programs = DB::table('programs')
-    ->where($type, "like", '%'.$search.'%')
-    ->where('buildingU_Program_Type', $program_Type)
     ->where('program_Area', $program_Area)->paginate(2);
   }
   else
