@@ -12,7 +12,7 @@
 
 <h1> Project Description</h1>
 
-<p> Current Version: V1.0 </p> 
+<p> Current Version: V1.3 </p> 
 
 <h1>How to run for Team</h1>
 
