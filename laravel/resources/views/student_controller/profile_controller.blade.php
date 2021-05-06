@@ -30,6 +30,9 @@
         </select>
 
         <input name="grade" id="grade" placeholder="Grade">
+        <!-- Button Variants -->
+        <input name="submit" id="submit" value="Submit" type="button">
+        <button name="submit" id="submit">Submit</button>
     </div>
 
 
