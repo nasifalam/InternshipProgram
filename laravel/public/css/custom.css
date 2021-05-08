@@ -87,7 +87,7 @@ th {
     height: 500px; width:60%;
 }
 .program_homepage_title{
-    margin: 25px 35px 0px 35px; font-size:35px; 
+    margin: 25px 35px 0px 35px; font-size:35px;
 }
 .program_homepage_where{
     margin: 0px 35px 0px 35px;
@@ -123,4 +123,33 @@ th {
 }
 .show_des{
     width:50vw; margin-top:15px;
+}
+
+/* Profile Controller */
+.profile_controller_div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.profile_controller_div > input {
+    margin: 15px;
+    width: 20%;
+    border: 1px solid black;
+}
+
+.profile_controller_div > select {
+    margin: 15px;
+    width: 20%;
+    border: 1px solid black;
+}
+
+.profile_controller_div > button {
+    margin: 15px;
+    margin-left: auto;
+    width: 20%;
+    text-align: center;
+    border: 1px solid green;
+    color: black;
+    background-color: green;
 }
