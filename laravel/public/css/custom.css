@@ -50,6 +50,7 @@
 
 table {
     width: 100%;
+    white-space: nowrap;
 }
 
 tr {
@@ -60,6 +61,8 @@ th,
 td {
     padding: 1rem;
     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 th {

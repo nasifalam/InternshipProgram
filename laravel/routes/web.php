@@ -61,4 +61,4 @@ Route::post('/save_program', 'App\Http\Controllers\ApplicationController@newSave
 Route::get('/my_programs','App\Http\Controllers\ApplicationController@showPrograms')->middleware('auth');
 
 //Routes for getting the profile contrller
-Route::get('/profile_controller','App\Http\Controllers\ProfileController@index');
+Route::get('/profile_controller','App\Http\Controllers\ProfileController@index')->middleware('auth');
