@@ -14,24 +14,84 @@
     <div class="profile_controller_div">
         <!-- profile info -->
         <h1 class="program_homepage_h1">Profile Page</h1>
-        <input class="form-control" name="age" id="age" placeholder="Age">
-        <input class="form-control" name="interests" id="interests" placeholder="Interests">
+        <form action="/update_profile" class="mx-5" method="POST">
+            @csrf
+            <input type="hidden"  id="id" name="id" value="{{$user['id']}}">
 
-        <select class="form-control" name="ethnicity" id="ethnicity">
-            <option value="asian">Asian</option>
-            <option value="white">White</option>
-            <option value="black">Black</option>
-            <option value="hispanic">Hispanic</option>
-        </select>
+            <label for="age">Age</label>
+            <div class="form-group">
+                <input class="form-control col-3" name="age" id="age" placeholder="Age" required value="{{ $user['age'] }}">
+            </div>
 
-        <select class="form-control" name="language" id="language">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
-        </select>
+            <label for="interests">Interests</label>
+            <div class="form-group">
+                @php
+                    $interests = implode(",", $user->interests);
+                @endphp
+                <input class="form-control col-3" name="interests" id="interests" placeholder="Interests" value="{{ $interests }}">
+                <p style="font-size: small; color: grey">You can enter multiple interests, if you separate them with commas.</p>
+            </div>
 
-        <input class="form-control" name="grade" id="grade" placeholder="Grade">
-        <button class="btn" name="submit" id="submit">Submit</button>
+            <label for="ethnicity">Ethnicity</label>
+            <div class="form-group">
+                <select class="form-control col-3" name="ethnicity" id="ethnicity" required>
+                    <option value="" disabled selected>Ethnicity</option>
+                    @if ($user->ethnicity === "asian")
+                        <option value="asian" selected>Asian</option>
+                    @else
+                        <option value="asian">Asian</option>
+                    @endif
+                    
+                    @if ($user->ethnicity === "white")
+                        <option value="white" selected>White</option>
+                    @else
+                        <option value="white">White</option>
+                    @endif
+
+                    @if ($user->ethnicity === "black")
+                        <option value="black" selected>Black</option>
+                    @else
+                        <option value="black">Black</option>
+                    @endif
+                    
+                    @if ($user->ethnicity === "hispanic")
+                        <option value="hispanic" selected>Hispanic</option>
+                    @else
+                        <option value="hispanic">Hispanic</option>
+                    @endif
+                </select>
+            </div>
+
+            <label for="language">Language</label>
+            <div class="form-group">
+                <select class="form-control col-3" name="language" id="language" required>
+                    <option value="" disabled selected>Language</option>
+                    @if ($user->language === "en")
+                        <option value="en" selected>English</option>
+                    @else
+                        <option value="en">English</option>
+                    @endif
+
+                    @if ($user->language === "fr")
+                        <option value="fr" selected>Français</option>
+                    @else
+                        <option value="fr">Français</option>
+                    @endif
+
+                    @if ($user->language === "es")
+                        <option value="es" selected>Español</option>
+                    @else
+                        <option value="es">Español</option>
+                    @endif  
+                </select>
+            </div>
+
+            <!-- <div class="form-group">
+                <input class="form-control col-3" name="grade" id="grade" placeholder="Grade">
+            </div> -->
+            
+            <button class="btn col-3" name="submit" id="submit" type="submit">Submit</button>
+        </form>
 
         <br>
         <!-- Saved Programs -->
@@ -68,6 +128,11 @@
 
         <!-- Recommended Programs -->
         <h1 class="program_homepage_h1">Recommended</h1>
+        <ul>
+            @foreach($user->interests as $interest)
+                <li>{{ $interest }}</li>
+            @endforeach
+        </ul>
 
     </div>
 

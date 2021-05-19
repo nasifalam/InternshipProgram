@@ -62,3 +62,4 @@ Route::get('/my_programs','App\Http\Controllers\ApplicationController@showProgra
 
 //Routes for getting the profile contrller
 Route::get('/profile_controller','App\Http\Controllers\ProfileController@index')->middleware('auth');
+Route::post('/update_profile', 'App\Http\Controllers\ProfileController@update')->middleware('auth');

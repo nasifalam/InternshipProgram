@@ -147,7 +147,7 @@ th {
     border: 1px solid black;
 }
 
-.profile_controller_div > button {
+.profile_controller_div > form > button {
     margin: 15px;
     margin-left: auto;
     width: 20%;

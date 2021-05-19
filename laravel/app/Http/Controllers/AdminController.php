@@ -36,6 +36,11 @@ $user['name']=$request->input('name');
 $user['email']=$request->input('email');
 $user['password']=bcrypt($request['password']);
 $user['role']=$request->input('role');
+$user['age']=0;
+$user['grade']=0;
+$user['ethnicity']="";
+$user['language']="";
+$user['interests']=[];
 
 $user->save();
 return redirect('/admin');
