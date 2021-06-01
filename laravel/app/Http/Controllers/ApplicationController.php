@@ -23,7 +23,8 @@ class ApplicationController extends Controller
     {
       $save->save();
     }
-    return redirect('/search_programs_v2');
+    // return redirect('/search_programs_v2');
+    return redirect()->back();
   }
 
   public function showPrograms(){

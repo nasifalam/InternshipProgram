@@ -25,9 +25,6 @@
 
             <label for="interests">Interests</label>
             <div class="form-group">
-                @php
-                    $interests = implode(",", $user->interests);
-                @endphp
                 <input class="form-control col-3" name="interests" id="interests" placeholder="Interests" value="{{ $interests }}">
                 <p style="font-size: small; color: grey">You can enter multiple interests, if you separate them with commas.</p>
             </div>
@@ -128,15 +125,47 @@
 
         <!-- Recommended Programs -->
         <h1 class="program_homepage_h1">Recommended</h1>
-        <ul>
-            @foreach($user->interests as $interest)
-                <li>{{ $interest }}</li>
-            @endforeach
-        </ul>
+        @foreach($recommended as $recommend)
+        <div class="container">
+            <div class="row program_homepage_item">
+                <div class="col">
+                    <div class="program_homepage_title">
+                        <a href="/Programs/{{$recommend->id}} ">{{$recommend-> program_Title}}</a>
+                    </div>
+                    <div class="program_homepage_where">
+                        {{$recommend-> program_City}}, {{$recommend-> program_Address}}
+                    </div>
+                    <div class="program_homepage_date">
+                        From {{$recommend-> program_Start_Date}} to {{$recommend-> program_End_Date}}
+                    </div>
+                    <div class="program_homepage_desc">
+                        Lorem Ipsum is sim
+                        ply dummy text of the print
+                        ing and typesetting industry. Lorem Ips
+                        um has been the industry's standard dummy text
+                        ever since the 1500s, when an unknown printer took a ga
+                        lley of type and scrambled it to make a type specimen book. ... It has roo
+                        ts in a piece of classical Latin literature
+                        from 45 BC, making it over 2000 years ol
+                    </div>
+                    <div class="form-inline">
+                    <form action="/Programs/{{$recommend->id}}" method="GET">
+                        <button type="submit" class="m-5 px-4 btn btn-primary">Apply</button>
+                    </form>
+                    <form action="/save_program" method="POST">
+                        @csrf
+                        <input type="hidden" name="program_id" value="{{$recommend -> id}}">
+                        <button type="submit" class="m-5 px-4 btn btn-secondary">Save</button>
+                    </form>
+                </div>
+                {{--             <div class="col program_homepage_item">
+                                {{$recommend-> buildingU_Program_Type}}
+                            </div> --}}
+            </div>
+        </div>
+        @endforeach
 
     </div>
-
-
 </html>
 
 @endsection

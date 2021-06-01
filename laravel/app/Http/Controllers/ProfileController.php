@@ -14,14 +14,30 @@ class ProfileController extends Controller
     {
         $userid = Auth::user()->id;
         $user = Auth::user();
+        $interests = implode(", ", $user->interests);
         $myapplications = DB::table('applications')->where("student_id", 'like',"$userid")
         ->join('programs','programs.id',"=","applications.program_id")
         ->get();
-        return view(
-            'student_controller.profile_controller',
-            ['user'=> $user],
-            ['myapplications'=>$myapplications],
-        );
+        $recommended = array();
+        foreach($user->interests as $interest)
+        {
+            foreach (DB::table('programs')->where("program_Area", 'like',"$interest")->get() as $program)
+            {
+                if (!(DB::table('applications')
+                ->where('student_id', $userid)
+                ->where('program_id', $program->id)
+                ->exists()))
+                {
+                    array_push($recommended, $program);
+                }
+            }
+        }
+
+        return view('student_controller.profile_controller')
+        ->with('user',$user)
+        ->with('myapplications', $myapplications)
+        ->with('interests', $interests)
+        ->with('recommended', $recommended);
     }
 
     public function update(Request $request)
