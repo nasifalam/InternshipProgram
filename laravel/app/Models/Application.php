@@ -12,7 +12,10 @@ class Application extends Model
   protected $table='applications';
   public $timestamps=false;
 
-
+  protected $fillable=[
+    'student_id',
+    'program_id',
+  ];
 
 
 }

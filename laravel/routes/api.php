@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationsApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/applications', [ApplicationsApiController::class, 'index']);
+Route::post('/applications', [ApplicationsApiController::class, 'store']);
+Route::put('/applications/{application}', [ApplicationsApiController::class, 'update']);
+Route::delete('/applications/{application}', [ApplicationsApiController::class, 'destroy']);
