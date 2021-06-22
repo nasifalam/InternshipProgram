@@ -14,11 +14,11 @@ class AddSettingToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger("age");
-            $table->bigInteger("grade");
-            $table->string("ethnicity");
-            $table->string("language");
-            $table->json("interests");
+            $table->bigInteger("age")->nullable();
+            $table->bigInteger("grade")->nullable();
+            $table->string("ethnicity")->nullable();
+            $table->string("language")->nullable();
+            $table->json("interests")->nullable();
         });
     }
 

@@ -23,3 +23,8 @@ Route::get('/applications', [ApplicationsApiController::class, 'index']);
 Route::post('/applications', [ApplicationsApiController::class, 'store']);
 Route::put('/applications/{application}', [ApplicationsApiController::class, 'update']);
 Route::delete('/applications/{application}', [ApplicationsApiController::class, 'destroy']);
+
+Route::get('/programs', "App\Http\Controllers\ProgramsApiController@index");
+Route::post('/programs', "App\Http\Controllers\ProgramsApiController@store");
+Route::put('/programs/{programs}', "App\Http\Controllers\ProgramsApiController@update");
+Route::delete('/programs/{programs}',"App\Http\Controllers\ProgramsApiController@destroy");

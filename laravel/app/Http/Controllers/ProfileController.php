@@ -14,7 +14,7 @@ class ProfileController extends Controller
     {
         $userid = Auth::user()->id;
         $user = Auth::user();
-        $interests = implode(", ", $user->interests);
+       $interests = implode(", ", $user->interests);
         $myapplications = DB::table('applications')->where("student_id", 'like',"$userid")
         ->join('programs','programs.id',"=","applications.program_id")
         ->get();
@@ -32,6 +32,7 @@ class ProfileController extends Controller
                 }
             }
         }
+
 
         return view('student_controller.profile_controller')
         ->with('user',$user)
