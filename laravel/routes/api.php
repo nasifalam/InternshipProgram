@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationsApiController;
+use App\Http\Controllers\UsersApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,8 @@ Route::get('/programs', "App\Http\Controllers\ProgramsApiController@index");
 Route::post('/programs', "App\Http\Controllers\ProgramsApiController@store");
 Route::put('/programs/{programs}', "App\Http\Controllers\ProgramsApiController@update");
 Route::delete('/programs/{programs}',"App\Http\Controllers\ProgramsApiController@destroy");
+
+Route::get('/users', [UsersApiController::class, 'index']);
+Route::post('/users', [UsersApiController::class, 'store']);
+Route::put('/users/{user}', [UsersApiController::class, 'update']);
+Route::delete('/users/{user}', [UsersApiController::class, 'destroy']);
